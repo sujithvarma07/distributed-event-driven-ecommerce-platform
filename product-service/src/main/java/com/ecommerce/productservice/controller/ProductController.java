@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/products")
@@ -21,7 +22,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public Page<Product> getAll(
+    public List<Product> getAll(
             @RequestParam int page,
             @RequestParam int size) {
 
