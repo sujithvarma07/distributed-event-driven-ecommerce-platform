@@ -15,6 +15,9 @@ public class OrderProducer {
 
     public void sendOrderEvent(OrderCreatedEvent event) {
 
+        System.out.println("Publishing order event to Kafka for orderId: " + event.getOrderId());
+
         kafkaTemplate.send(TOPIC, event);
+
     }
 }

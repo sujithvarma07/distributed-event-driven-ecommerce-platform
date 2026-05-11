@@ -32,6 +32,7 @@ public class OrderServiceImpl implements OrderService {
                 savedOrder.getQuantity()
         );
 
+        System.out.println("Order created with ID: " + savedOrder.getId() + ", publishing event to Kafka...");
         orderProducer.sendOrderEvent(event);
 
         return savedOrder;
